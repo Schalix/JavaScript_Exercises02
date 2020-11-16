@@ -2,6 +2,8 @@
 console.log('Starting JavaScript')
 
 console.log('Hello World')
+console.log('Hello World')
+console.log('Hello World')
 
 var x = 10
 
