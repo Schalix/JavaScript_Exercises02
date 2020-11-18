@@ -118,7 +118,46 @@ for (l = 0; l < ages.length; l++) {
     // }
 }
 
+//FUNCTIONS THAT USE ARRAYS
 
+//preliminary exercises... like: print smalles ages:
+console.log(Math.min(...ages));
+console.log(Math.min.apply(Math, ages))
 
+var func = myFunction(4, 3)
+function myFunction(p1, p2) {
+    return p1 * p2
+}
+console.log(func)
+console.log(myFunction(2, 3))
+
+//print lowest age:
+var lowestAge = ageFunc(ages)
+function ageFunc(ages) {
+    return Math.min(...ages);
+}
+console.log(lowestAge)
+
+//print highest age:
+var highestAge = ageHighFunc(ages)
+function ageHighFunc(ages) {
+    return Math.max(...ages);
+}
+console.log(highestAge)
+
+//Function Array Index
+
+// var a = [7, 11, 27, 78, 82, 5, 34]
+// var i = 0
+//console.log(a[i])
+
+console.log("Array Index Function Exercise: ")
+var a = [7, 11, 27, 78, 82, 5, 34]
+var m = 1;
+// var arrayIndex = arrayIndexFunc(a, i)
+arrayIndex(a, m)
+function arrayIndex(a, m) {
+    console.log(a[m]);
+}
 
 
