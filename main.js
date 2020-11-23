@@ -63,7 +63,7 @@ while (i < 10) {
     i++
 }
 console.log(text)
-document.getElementById("TestWhile").innerHTML = text;
+// document.getElementById("TestWhile").innerHTML = text;
 
 // for (i = 0; i < 1; i++) {
 //     console.log(ages)
@@ -76,7 +76,7 @@ while (n < 3) {
     console.log("x" + (x += n))
 }
 console.log(n)
-document.getElementById("TestWhile2").innerHTML = n; 
+// document.getElementById("TestWhile2").innerHTML = n; 
 
 //First while exercise
 var j = 0;
@@ -101,6 +101,7 @@ var k = 0
 while (k < ages.length) {
     if (ages[k] % 2 === 0){
         console.log(ages[k])
+        console.log("reminder", ages[k] % 2)
     }
     // else {
     //     console.log("Uneven age")
@@ -125,18 +126,78 @@ console.log(Math.min(...ages));
 console.log(Math.min.apply(Math, ages))
 
 var func = myFunction(4, 3)
+console.log(func)
+
 function myFunction(p1, p2) {
     return p1 * p2
 }
-console.log(func)
 console.log(myFunction(2, 3))
 
-//print lowest age:
+//print lowest age solution 1:
 var lowestAge = ageFunc(ages)
 function ageFunc(ages) {
     return Math.min(...ages);
 }
 console.log(lowestAge)
+
+//preliminary exercises... print lowest age, solution 2: 
+testAge1 = 19
+testAge2 = 20
+if (testAge1 < testAge2) {
+    console.log("TestAge", testAge1)
+}
+
+var array_random = [6, 89, 2, 22, 33, 74]
+for (q = 0; q < array_random.length; q++) {
+    console.log("Array Random", array_random[q])
+}
+
+
+var q = 0
+// console.log("Test Q", array_random[q + 1])
+for (q = 0; q < array_random.length; q++) {
+    // console.log(array_random[q], array_random[q + 1])
+    if (array_random[q] < array_random[q + 1]) {
+        console.log("TestSmaller", array_random[q])
+    }
+}
+
+for (q = 0; q < array_random.length; q++) {
+    if (array_random[q] <= array_random[q + 1]) {
+        console.log("First one smaller", array_random[q])
+    }
+    if (array_random[q] >= array_random[q + 1]) {
+        console.log("Second one smaller", array_random[q + 1])
+    }
+}
+
+//still preliminary exercises smallest age
+//now: combine function and if, compare first to all numbers
+smallerAge02()
+function smallerAge02() {
+    var min = array_random[0]
+    for (q = 0; q < array_random.length; q++) {
+        var value = array_random[q]     
+        if (value < min) {
+            min = value 
+        } 
+    }
+    console.log("youngest age", min)
+}
+
+//Translation of result = a > b ? x : y;
+// if (value < min) {
+//     min = value;
+// } else {
+//     min = min
+// }
+
+// if (array[i] < array[0]) {
+//     array[0] = array[i];
+// } else {
+//     array[0] = array[0]
+// }
+
 
 //print highest age:
 var highestAge = ageHighFunc(ages)
@@ -145,6 +206,34 @@ function ageHighFunc(ages) {
 }
 console.log(highestAge)
 
+//new version of highest age:
+//WRONG RESULT:::::::
+highestAgeNew()
+function highestAgeNew() {
+    var min = array_random[0];
+    for (i = 0; i < array_random.length; i++) {
+        var value = array_random[i];
+        if (value > min) {
+            min = value
+        }
+    }
+    console.log("highest age", min)
+}
+
+highestAge02()
+function highestAge02() {
+    var max = array_random[0]
+    for (q = 0; q < array_random.length; q++) {
+        var value = array_random[q]     
+        if (value > max) {
+            max = value 
+        } 
+    }
+    console.log("highest age2", max)
+}
+
+
+
 //Function Array Index
 
 // var a = [7, 11, 27, 78, 82, 5, 34]
@@ -152,12 +241,41 @@ console.log(highestAge)
 //console.log(a[i])
 
 console.log("Array Index Function Exercise: ")
+
+// var arrayIndex = arrayIndexFunc(a, i)
 var a = [7, 11, 27, 78, 82, 5, 34]
 var m = 1;
-// var arrayIndex = arrayIndexFunc(a, i)
 arrayIndex(a, m)
 function arrayIndex(a, m) {
     console.log(a[m]);
 }
 
 
+//Print repeated values
+
+//preliminary exercise:
+console.log("Print repeated values:")
+numberA = 27
+numberB = 27
+if (numberA === numberB) {
+    console.log(numberA)
+} 
+
+//DOM MANIPULATION EXERCISES
+
+//preliminary exercise: replace header
+function replaceHeader() {
+    var header = document.getElementById("header")
+    header.innerHTML = "Replaces Band Header"
+}
+
+// addBands(["Superstar", "Morningstar", "StarEve"])
+//[a, b, c]
+function addBands() {
+    var bandList = document.getElementById("band-list")
+    var addBandname = document.createElement("addBandname")
+    addBandname.text = "Band New!";
+    bandList.addEventListener(addBandname);
+    
+    
+}
